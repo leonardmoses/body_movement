@@ -8,8 +8,7 @@ const PORT = 3000;
 //              DATABASE
 // =======================================
 const mongoose = require("mongoose");
-const DATABASE_URL =
-	'process.env.MONGODB_URI';
+const DATABASE_URL = process.env.MONGODB_URI;
 const db = mongoose.connection;
 // Connect to MongoDB Atlas
 mongoose.connect(DATABASE_URL, {
