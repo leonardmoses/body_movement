@@ -1,15 +1,19 @@
 // =======================================
 //              DEPENDENCIES
 // =======================================
+require('dotenv').config()
 const express = require('express');
+const methodOverride = require('method-override');
+const mongoose = require ('mongoose');
 const app = express();
-const PORT = 3000;
+const db = mongoose.connection;
+// const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 // =======================================
 //              DATABASE
 // =======================================
-const mongoose = require("mongoose");
 const DATABASE_URL = process.env.MONGODB_URI;
-const db = mongoose.connection;
+
 // Connect to MongoDB Atlas
 mongoose.connect(DATABASE_URL, {
 	useNewUrlParser: true,
@@ -28,13 +32,20 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // =======================================
 //              MIDDLEWARE
 // =======================================
+//use public folder for static assets
+app.use(express.static('public'));
+
 // body parser middleware: creates req.body
 app.use(express.urlencoded({ extended: false }));
+
+app.use(methodOverride('_method'));
 // =======================================
 //              ROUTES
 // =======================================
 // INDEX (get)
-
+app.get('/' , (req, res) => {
+	res.send('Hello World!');
+  });
 
 // NEW (get)
 
