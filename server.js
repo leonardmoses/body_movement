@@ -43,9 +43,9 @@ app.use(methodOverride('_method'));
 //              ROUTES
 // =======================================
 // INDEX (get)
-app.get('/' , (req, res) => {
-	res.send('Hello World!');
-  });
+// app.get('/' , (req, res) => { /*test route*/
+// 	res.send('Hello World!');
+//   });
 
 // NEW (get)
 
