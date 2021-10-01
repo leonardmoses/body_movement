@@ -1,51 +1,43 @@
 // =======================================
 //              DEPENDENCIES
 // =======================================
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
-const methodOverride = require('method-override');
-const mongoose = require ('mongoose');
 const app = express();
-const db = mongoose.connection;
-// const PORT = 3000;
-const PORT = process.env.PORT || 3000;
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 // =======================================
 //              DATABASE
 // =======================================
-const DATABASE_URL = process.env.MONGODB_URI;
-
-// Connect to MongoDB Atlas
-mongoose.connect(DATABASE_URL, {
+// Database Connection
+mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
-	useUnifiedTopology: true,
+	useUnifiedTopology: true
 });
-
 // Database Connection Error/Success
 // Define callback functions for various events
-db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
+const db = mongoose.connection
+db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 // =======================================
 //              MODELS
 // =======================================
-
+/* Models moved to controller */
 // =======================================
 //              MIDDLEWARE
 // =======================================
-//use public folder for static assets
+// Body parser middleware: give us access to req.body
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
-// body parser middleware: creates req.body
-app.use(express.urlencoded({ extended: false }));
-
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 // =======================================
 //              ROUTES
 // =======================================
+const controller1 = require("./controllers/controller1.js");
+app.use("/index" , controller1);
+
 // INDEX (get)
-app.get('/' , (req, res) => { /*test route*/
-	res.send('Hello World!');
-  });
 
 
 // NEW (get)
@@ -60,7 +52,7 @@ app.get('/' , (req, res) => { /*test route*/
 // CREATE (post)
 
 
-//EDIT (get) (put)
+// EDIT (get) (put)
 
 
 // SHOW (get)
@@ -69,4 +61,5 @@ app.get('/' , (req, res) => { /*test route*/
 // =======================================
 //              LISTENER
 // =======================================
-app.listen(PORT, () => console.log(`express is listening on port: ${PORT}`));
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`server is listening on port: ${PORT}`));
