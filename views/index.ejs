@@ -4,5 +4,47 @@
 
     <h1>Index Page</h1>
 
+    <nav>
+        <ul>
+            <li><a href="/index/new">Create New</a></li>
+        </ul>
+    </nav>
+
+    <table>
+        <tr>
+            <th>Sets</th>
+            <th>lbs</th>
+            <th>reps</th>
+            <th>rest</th>
+            <th>rpe</th>
+        </tr>
+
+        
+        <% for(let i = 0; i < preset_routine.length; i++) { %>
+            <th><%= preset_routine[i].workout.name %> (<%= preset_routine[i].workout.sets %> Sets)</th>
+
+
+
+            <tr>
+                <td><%= preset_routine[i].workout.sets %></td>
+                <td><%= preset_routine[i].workout.lbs %></td>
+                <td><%= preset_routine[i].workout.reps %></td>
+                <td><%= preset_routine[i].workout.rest %></td>
+                <td><%= preset_routine[i].workout.rpe %></td>
+            </tr>
+
+        <% } %>
+
+        
+    </table>
+
+    <% /* %>
+    <% for(let i = 0; i < preset_routine.workout.sets.val; i++) { %>
+
+
+        <% } %>
+
+    <% */ %>
+
 </body>
 </html>

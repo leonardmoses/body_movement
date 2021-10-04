@@ -1,0 +1,9 @@
+h1 {
+    color: brown;
+}
+
+
+table ,  td{
+    border: black solid 1px;
+    text-align: center;
+}

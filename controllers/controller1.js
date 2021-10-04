@@ -10,18 +10,19 @@ const controller1 = express.Router();
 // =======================================
 // Import model into controller
 // This will be the Database Object
-const SchemaModel_callingFrom_model1_schema = require('../models/schema-model.js');
+const preset_routine = require('../models/preset-workout.js');
 // =======================================
 //           CONTROLLER ROUTES
 // =======================================
 // INDEX (get)
 controller1.get('/' , (req,res) => { /* Test route to index */
-    res.render('index.ejs');
+    
+    res.render('index.ejs' , {preset_routine: preset_routine});
 })
 
 // NEW (get)
 controller1.get('/new' , (req,res) => { /* Test route to new */
-    res.render('new.ejs');
+    res.render('new.ejs' );
 })
 
 // DESTROY (delete)
