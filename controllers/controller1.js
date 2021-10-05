@@ -50,22 +50,12 @@ controller1.delete('/show_personal/:id', (req, res) => {
 
 // UPDATE (put)
 controller1.put('/show_personal/:id' , (req ,res) => {
-	UserRoutine.findOneAndUpdate(req.params.id, {$inc:{qty:-1}}, {
-		new: true
-}, (error, updatedProduct) => {
+    
+	UserRoutine.findOneAndUpdate(req.params.id, {$inc:{sets:-1}}, {new: true}, (error, updatedWorkout) => {
+        console.log(updatedWorkout)
 		res.redirect('/index/show_personal');
 	});
 });
-
-
-// storeRouter.put('/:id/buy' , (req ,res) => {
-    
-// 	Store.findByIdAndUpdate(req.params.id, {$inc:{qty:-1}}, {
-// 		new: true
-// }, (error, updatedProduct) => {
-// 		res.redirect(`/store/${req.params.id}`);
-// 	});
-// });
 
 
 
