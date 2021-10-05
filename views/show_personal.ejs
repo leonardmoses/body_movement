@@ -27,6 +27,7 @@
                 <% for(let i = 0; i < workout.sets; i++) { %>
 
                     <tr>
+
                         <td><%= workout.lbs %></td>
                         <td><%= workout.reps %></td>
                         <td><%= workout.rest %></td>
@@ -39,7 +40,11 @@
 
             </table>
 
-            <form action="/index/show_personal/<%=workout._id%>?_method=PUT" method="POST">
+            <form action="/index/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
+                <input type="submit" name="sets" value="Add Set"/>
+            </form>
+
+            <form action="/index/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
                 <input type="submit" name="sets" value="Remove Set"/>
             </form>
 
