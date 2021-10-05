@@ -40,17 +40,34 @@ controller1.get('/new' , (req,res) => {
 })
 
 // DESTROY (delete)
+controller1.delete('/show_personal/:id', (req, res) => {
+    UserRoutine.findByIdAndRemove(req.params.id, (err, data) => {
+    // res.send('deleting...'); /* testing delete route */
+    res.redirect('/index/show_personal');
+    });
+});
 
 
 // UPDATE (put)
-controller1.put('/show_personal/remove_set' , (req ,res) => {
-    
-	UserRoutine.findOneAndUpdate(req.body.sets, {$inc:{qty:-1}}, {
+controller1.put('/show_personal/:id' , (req ,res) => {
+	UserRoutine.findOneAndUpdate(req.params.id, {$inc:{qty:-1}}, {
 		new: true
 }, (error, updatedProduct) => {
-		res.redirect(`/index/show_personal`);
+		res.redirect('/index/show_personal');
 	});
 });
+
+
+// storeRouter.put('/:id/buy' , (req ,res) => {
+    
+// 	Store.findByIdAndUpdate(req.params.id, {$inc:{qty:-1}}, {
+// 		new: true
+// }, (error, updatedProduct) => {
+// 		res.redirect(`/store/${req.params.id}`);
+// 	});
+// });
+
+
 
 // CREATE (post)
 controller1.post("/", (req, res) => {

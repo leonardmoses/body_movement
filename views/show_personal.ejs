@@ -12,11 +12,11 @@
     </nav>
 
     
-    <table>
-        <% workouts.forEach(workout=> { %>
-            <div>
-                <th><h3><%= workout.name %> (<%= workout.sets %> Sets)</h3></th>
-
+    
+    <% workouts.forEach(workout=> { %>
+        <div>
+            <h3><%= workout.name %> (<%= workout.sets %> Sets)</h3>
+            <table>    
                 <tr>
                     <th>Weight</th>
                     <th>reps</th>
@@ -31,19 +31,27 @@
                         <td><%= workout.reps %></td>
                         <td><%= workout.rest %></td>
                         <td><%= workout.rpe %></td>
-                        <form action="/index/show_personal/remove_set?_method=PUT" method="POST">
-                            <td><input type="button" name="sets" value="Remove Set"></td>
-                        </form>
-                    </tr>
 
-                    
+                    </tr>
 
                 <% } %>
 
+                <!-- <form action="/index/show_personal/<%=workout._id%>?_method=PUT" method="POST">
+                    <input type="button" name="sets" value="Remove Set">
+                </form> -->
 
-            </div>
-        <% }) %>
-    </table>
+                <form action="/index/show_personal/<%=workout._id%>?_method=PUT" method="POST">
+                    <input type="submit" name="sets" value="Remove Set"/>
+                </form>
+
+                <form action="/index/show_personal/<%=workout._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE"/>
+                </form>
+
+            </table>
+        </div>
+    <% }) %>
+    
 
 
 
