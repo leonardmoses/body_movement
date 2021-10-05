@@ -7,21 +7,22 @@ const mongoose = require('mongoose');
 // =======================================
 //               SCHEMA  
 // =======================================
-const schema1 = new mongoose.Schema({
-  name: {type: String , required: false},
-  description: {type: String , required: false},
-  img: {type: String, required: false},
-  price: {type: Number, },
-  qty: {type: Number , required: true}
+const workoutSchema = new mongoose.Schema({
+  name: {type: String , required: true},
+  sets: {type: String , required: true},
+  lbs: {type: String, required: true},
+  reps: {type: Number},
+  rest: {type: Number },
+  rpe: {type: Number }
 });
 
 // =======================================
 //                 MODEL 
 // =======================================
-const schemaModel_toBeCalledInController = mongoose.model('User', schema1);
+const UserRoutine = mongoose.model('UserRoutine', workoutSchema);
 
 // =======================================
 //             EXPORT MODEL
 // =======================================
 // Export model to controller
-module.exports = schemaModel_toBeCalledInController;
+module.exports = UserRoutine;

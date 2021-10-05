@@ -1,0 +1,111 @@
+<%- include('./partials/head.ejs')%>
+
+<body>
+
+    <h1>Show Personal Page</h1>
+
+    <nav>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/index/new">Create New</a></li>
+        </ul>
+    </nav>
+
+    
+    <table>
+        <% workouts.forEach(workout=> { %>
+            <div>
+                <th><h3><%= workout.name %> (<%= workout.sets %> Sets)</h3></th>
+
+                <tr>
+                    <th>Weight</th>
+                    <th>reps</th>
+                    <th>rest</th>
+                    <th>rpe</th>
+                </tr>
+
+                <% for(let i = 0; i < workout.sets; i++) { %>
+
+                    <tr>
+                        <td><%= workout.lbs %></td>
+                        <td><%= workout.reps %></td>
+                        <td><%= workout.rest %></td>
+                        <td><%= workout.rpe %></td>
+                        <form action="/index/show_personal/remove_set?_method=PUT" method="POST">
+                            <td><input type="button" name="sets" value="Remove Set"></td>
+                        </form>
+                    </tr>
+
+                    
+
+                <% } %>
+
+
+            </div>
+        <% }) %>
+    </table>
+
+
+
+    <% /* %>
+
+
+    <% */ %>
+
+<!--#region main  -->
+<% /* %>
+<ul>
+    <% workouts.forEach(element=> { %>
+
+        <li><%= element.name %></li>
+        <li><%= element.sets %></li>
+        <li><%= element.lbs %></li>
+        <li><%= element.rest %></li>
+        <li><%= element.rpe %></li>
+
+    <% }) %>
+</ul>
+
+
+    <% /* %>
+    <h4><%= exercises.name %></h4>
+    <h4><%= exercises.lbs %></h4>
+    <h4><%= exercises.rest %></h4>
+    <h4><%= exercises.rpe %></h4>
+
+    <div id="tableDiv">
+        <table>
+            
+                <% for(let i = 0; i < preset_routine.length; i++) { %>
+                    <div id="workoutDiv">
+                        <th><h3><%= preset_routine[i].workout.name %> (<%= preset_routine[i].workout.sets %> Sets)</h3></th>
+
+                            <tr>
+                                <th>Weight</th>
+                                <th>reps</th>
+                                <th>rest</th>
+                                <th>rpe</th>
+                            </tr>
+
+                            <% for(let k = 0; k < preset_routine[i].workout.sets; k++) { %>
+                                
+                                    <tr>
+                                        <td><%= preset_routine[i].workout.lbs %> lbs</td>
+                                        <td><%= preset_routine[i].workout.reps %>x</td>
+                                        <td><%= preset_routine[i].workout.rest %>sec</td>
+                                        <td><%= preset_routine[i].workout.rpe %></td>
+                                        <td><input type="button" value="delete set"></td>
+                                    </tr>
+                    
+                            <% } %>
+
+                        <tr><td id="addSetCell"><input type="button" value="Add Set"></td></tr>
+                    </div>
+                <% } %>
+                                
+        </table>
+    </div>  
+    <% */ %>
+<!--#endregion -->
+</body>
+</html>
