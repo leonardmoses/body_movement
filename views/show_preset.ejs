@@ -1,22 +1,84 @@
 <%- include('./partials/head.ejs')%>
 
+<link rel="stylesheet" href="/css/show.css">
+
 <body>
 
-    <h1>Show Preset Page</h1>
+    <div id="titleDiv">
+        <h1>Preset Workout</h1>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/index/new">Create New</a></li>
-        </ul>
-    </nav>
+    <div id="indexOuterNav">
+        <div id="indexInnerNav">
+            <a class="indexButtons" href="/index">Home</a>
+            <a class="indexButtons" href="/index/show_personal">Your Routine</a>
+            <a class="indexButtons" href="/index/new">Create Routine</a>
+        </div>
+    </div>
+
+    <main>
+        <% workouts.forEach(workout=> { %>
+            <div id="tableMainDiv">
+                <h3><%= workout.name %> (<%= workout.sets %> Sets)</h3>
+                <div class="addRemoveParentDiv">
+                    <div class="addRemove">
+                        <form action="/index/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
+                            <input type="submit" name="sets" value="Add Set"/>
+                        </form>
+
+                        <form action="/index/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
+                            <input type="submit" name="sets" value="Remove Set"/>
+                        </form>
+                    </div>
+                </div>
+                <table>    
+                    <tr>
+                        <th>Weight</th>
+                        <th>reps</th>
+                        <th>rest</th>
+                        <th>rpe</th>
+                    </tr>
+
+                    <% for(let i = 0; i < workout.sets; i++) { %>
+
+                        <tr>
+
+                            <td><%= workout.lbs %></td>
+                            <td><%= workout.reps %></td>
+                            <td><%= workout.rest %></td>
+                            <td><%= workout.rpe %></td>
+
+                        </tr>
+
+                    <% } %>
+
+
+                </table>
+
+
+                <div class="deleteDiv">
+                    <form class="delete" action="/index/show_personal/<%=workout._id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE"/>
+                    </form>
+                </div>
+
+            </div>
+        <% }) %>
+    </main>
+
+    
+    <% /* %>
+    <!--#region main  -->
+    
+
+
 
     <div id="tableDiv">
         <table>
             
-                <% for(let i = 0; i < preset_routine.length; i++) { %>
+                <% for(let i = 0; i < workouts.length; i++) { %>
                     
-                        <th><h3><%= preset_routine[i].workout.name %> (<%= preset_routine[i].workout.sets %> Sets)</h3></th>
+                        <th><h3><%= workouts[i].name %> (<%= workouts[i].sets %> Sets)</h3></th>
 
                             <tr>
                                 <th>Weight</th>
@@ -25,13 +87,13 @@
                                 <th>rpe</th>
                             </tr>
 
-                            <% for(let k = 0; k < preset_routine[i].workout.sets; k++) { %>
+                            <% for(let k = 0; k < workouts[i].sets; k++) { %>
                                 
                                     <tr>
-                                        <td><%= preset_routine[i].workout.lbs %> lbs</td>
-                                        <td><%= preset_routine[i].workout.reps %>x</td>
-                                        <td><%= preset_routine[i].workout.rest %>sec</td>
-                                        <td><%= preset_routine[i].workout.rpe %></td>
+                                        <td><%= workouts[i].lbs %> lbs</td>
+                                        <td><%= workouts[i].reps %>x</td>
+                                        <td><%= workouts[i].rest %>sec</td>
+                                        <td><%= workouts[i].rpe %></td>
                                         <td><input type="button" value="delete set"></td>
                                     </tr>
                     
@@ -43,12 +105,8 @@
                                 
         </table>
     </div>  
-
-<!--#region main  -->
-    <% /* %>
-        
+    <!--#endregion -->
     <% */ %>
-<!--#endregion -->
 
 </body>
 </html>

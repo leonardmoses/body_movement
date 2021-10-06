@@ -1,0 +1,72 @@
+<%- include('./partials/head.ejs')%>
+
+<body>
+
+    <h1>Edit Your Routine</h1>
+
+
+    <% workouts.forEach(workout=> { %>
+        <div>
+         
+            <h3><input type="string" name="lbs" value="<%= workout.name %>"/> (<input type="number" name="lbs" value="<%= workout.sets %>"/> Sets)</h3>
+                <form action="/index/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
+                        <table>    
+                            <tr>
+                                <th>Weight</th>
+                                <th>reps</th>
+                                <th>rest</th>
+                                <th>rpe</th>
+                            </tr>
+
+                            
+
+                                <tr>
+                                    <td><input type="number" name="lbs" value="<%= workout.lbs %>"/></td>
+                                    <td><input type="number" name="lbs" value="<%= workout.reps %>"/></td>
+                                    <td><input type="number" name="lbs" value="<%= workout.rest %>"/></td>
+                                    <td><input type="number" name="lbs" value="<%= workout.rpe %>"/></td>
+
+                                </tr>
+                            
+                        </table>
+                    <input type="submit" name="lbs" value="Submit Changes"/>
+                </form>
+
+
+
+        </div>
+    <% }) %>
+
+    
+
+
+
+<% /* %>
+<!--#region main  -->
+
+<form action="/store/<%=product.id%>/edit?_method=PUT" method="POST">
+    <!--  NOTE: the form is pre-populated with values for the server-->
+    name: <input type="text" name="name" placeholder="name"/><br />
+    description: <input type="text" name="description" placeholder="Product Description"/><br />
+    img: <input type="text" name="img" placeholder="Full URL here"><br>
+    price: <input type="number" name="price" placeholder="Amount in dollars"/><br />
+    qty: <input type="number" name="qty" placeholder="Items in stocks"/><br />
+    <input type="submit" name="submit" value="Submit Changes" />
+</form>
+
+    <form action="/index" method="POST">
+        name: <input type="text" name="name" value="New Exercise"/><br />
+        sets: <input type="number" min="1" name="sets" value="3"/><br />
+        lbs: <input type="number" min="0" name="lbs" value="30"/><br />
+        reps: <input type="number" min="1" name="reps" value="10"/><br />
+        rest: <input type="number" min="0" name="rest" value="60"/><br />
+        rpe: <input type="number" min="0" max="10" name="rpe" value="8"/><br />
+        <input type="submit" name="" value="Add Exercise" />
+    </form>
+
+<!--#endregion main  -->
+<% */ %>
+
+
+</body>
+</html>

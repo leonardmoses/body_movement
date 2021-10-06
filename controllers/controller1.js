@@ -49,6 +49,16 @@ controller1.delete('/show_personal/:id', (req, res) => {
 
 
 // UPDATE (put)
+    //Manual Editing
+controller1.put('/show_personal/edit/:id', (req, res) => {  
+	UserRoutine.findByIdAndUpdate(req.params.id, {$sets:{val:req.body}}, {new: true}, 
+        (error, updatedWorkout) => {
+        console.log(error)
+        res.redirect(`/index/show_personal`);
+    });
+});
+
+    //Adding a Set
 controller1.put('/show_personal/add/:id' , (req ,res) => {
     
 	UserRoutine.findByIdAndUpdate(req.params.id, {$inc:{sets:+1}}, {new: true}, (error, updatedWorkout) => {
@@ -56,7 +66,7 @@ controller1.put('/show_personal/add/:id' , (req ,res) => {
 		res.redirect('/index/show_personal');
 	});
 });
-
+    //Removing a Set
 controller1.put('/show_personal/remove/:id' , (req ,res) => {
     
 	UserRoutine.findByIdAndUpdate(req.params.id, {$inc:{sets:-1}}, {new: true}, (error, updatedWorkout) => {
@@ -74,13 +84,15 @@ controller1.post("/", (req, res) => {
 });
 
 // EDIT (get) (put)
-// controller1.get('/edit' , (req,res) => { /* Test route to edit */
-//     res.render('edit.ejs');
-// })
+controller1.get('/edit_personal' , (req,res) => { /* Test route to edit */
+    UserRoutine.find({}, (error, allworkouts) => {
+    res.render('edit_personal.ejs' , {workouts: allworkouts});
+    });
+});
 
 // SHOW (get)
 controller1.get('/show_preset' , (req,res) => { 
-    res.render('show_preset.ejs' , {preset_routine: preset_routine});
+    res.render('show_preset.ejs' , {workouts: preset_routine});
 })
 
 

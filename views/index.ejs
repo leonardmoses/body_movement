@@ -1,40 +1,69 @@
 <%- include('./partials/head.ejs')%>
 
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
 <body>
 
-    <h1>Index Page</h1>
-
-    <h2><a href="/index/show_personal">Show Personal</a></h2>
-    <h2><a href="/index/show_preset">Show Preset</a></h2>
-    <h2><a href="/index/new">Create New</a></h2>
+<div id="bodyDiv">
     
+    <div id="titleDiv">
+        <h1>Body Movement</h1>
+    </div>
 
 
-  
+    <div id="indexOuterNav">
+        <div id="indexInnerNav">
+            <a class="indexButtons" href="/index/show_personal">Your Routine</a>
+            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
+            <a class="indexButtons" href="/index/new">Create Routine</a>
+        </div>
+    </div>
 
+    <div>
+        <h3>Feel Stronger. Live longer.</h3>
+    </div>
+    
+    <!-- <div id="imageDiv">
+        <img src="https://media.istockphoto.com/photos/time-to-pump-that-iron-picture-id1069959276?k=20&m=1069959276&s=612x612&w=0&h=OQGr2MB2irW_4Ge8JssERwE_BJzwTO6mEcm584Y7f9M=" alt="No Image">
+    </div> -->
 
-  
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://media.istockphoto.com/photos/time-to-pump-that-iron-picture-id1069959276?k=20&m=1069959276&s=612x612&w=0&h=OQGr2MB2irW_4Ge8JssERwE_BJzwTO6mEcm584Y7f9M=" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/photos/3d-render-gym-fitness-center-picture-id1129698675?k=20&m=1129698675&s=612x612&w=0&h=991IGTtd8tClj42O3nz6T5eAV0RL1GdQ0AVnI67ql0Y=" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/photos/modern-gym-interior-with-city-view-3d-rendering-picture-id974165230?k=20&m=974165230&s=612x612&w=0&h=kPzEm2VDXMN3gTApP7DTtelSdHtnIkjkHcXVwpRClb4=" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+ 
+    <div id="paragraphDiv">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sunt totam molestiae ullam earum dolore, vel ipsa ea esse quidem aperiam impedit aliquid nostrum tempora libero! Sapiente perspiciatis fugiat distinctio!</p>
+    </div>
+
+</div>
+
+<% /* %>
 <!--#region main  -->
-    <% /* %>
 
 
-
-
-    <ul>
-        <% exercises.forEach(element=> { %>
-            <li>
-                <!-- this turns our created exercises into links where we can later view show page -->
-                <a href="/index/<%=element._id; %>">
-                    <%=element.name; %>
-                </a>
-                <form action="/index/<%= element.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE"/>
-                </form>
-                <a href="/index/<%=element._id %>/edit">Edit</a>
-            </li>
-            <% }) %>
-    </ul>
-    <% */ %>
 <!--#endregion -->
+<% */ %>
+
 </body>
 </html>

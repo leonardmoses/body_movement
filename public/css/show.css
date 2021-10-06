@@ -1,0 +1,45 @@
+
+main {
+    width: 100%;
+    /* background-color: green; */
+}
+
+.addRemoveParentDiv {
+    width: 100%;
+    /* background-color: salmon; */
+    border-radius: black solid 4px;
+    display: flex;
+}
+
+.addRemove {
+    /* background-color: yellow; */
+    display: flex;
+    margin: 0 auto;
+}
+
+table {
+    margin: 0 auto;
+    overflow-x:auto;
+}
+
+table , td , th{
+    border: black solid 1px;
+    background-color: lightgrey;
+    text-align: center;
+    contain: content;
+}
+
+td {
+    width: 10%;
+}
+
+.deleteDiv {
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.delete  {
+    margin: 0 auto;
+    background-color: red;
+}
