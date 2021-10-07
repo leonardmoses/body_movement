@@ -30,17 +30,17 @@ const preset_routine = require('../models/preset-workout.js');
 //     res.render('index.ejs' , {preset_routine: preset_routine});
 // })
 
-controller1.get('/' , (req,res) => { /* Test route to index */
+controller1.get('/index' , (req,res) => { /* Test route to index */
     res.render('index.ejs');
 })
 
 // NEW (get)
-controller1.get('/new' , (req,res) => { 
+controller1.get('/index/new' , (req,res) => { 
     res.render('new.ejs' );
 })
 
 // DESTROY (delete)
-controller1.delete('/show_personal/:id', (req, res) => {
+controller1.delete('/index/show_personal/:id', (req, res) => {
     UserRoutine.findByIdAndRemove(req.params.id, (err, data) => {
     // res.send('deleting...'); /* testing delete route */
     res.redirect('/index/show_personal');
@@ -50,7 +50,7 @@ controller1.delete('/show_personal/:id', (req, res) => {
 
 // UPDATE (put)
     //Manual Editing
-controller1.put('/show_personal/edit/:id', (req, res) => {  
+controller1.put('/index/show_personal/edit/:id', (req, res) => {  
 	UserRoutine.findByIdAndUpdate(req.params.id, req.body , {new: true}, 
         (error, updatedWorkout) => {
         console.log(updatedWorkout)
@@ -64,7 +64,7 @@ controller1.put('/show_personal/edit/:id', (req, res) => {
 });
 
     //Adding a Set
-controller1.put('/show_personal/add/:id' , (req ,res) => {
+controller1.put('/index/show_personal/add/:id' , (req ,res) => {
     
 	UserRoutine.findByIdAndUpdate(req.params.id, {$inc:{sets:+1}}, {new: true}, (error, updatedWorkout) => {
         console.log(req.params.id)
@@ -72,7 +72,7 @@ controller1.put('/show_personal/add/:id' , (req ,res) => {
 	});
 });
     //Removing a Set
-controller1.put('/show_personal/remove/:id' , (req ,res) => {
+controller1.put('/index/show_personal/remove/:id' , (req ,res) => {
     
 	UserRoutine.findByIdAndUpdate(req.params.id, {$inc:{sets:-1}}, {new: true}, (error, updatedWorkout) => {
         console.log(req.params.id)
@@ -82,26 +82,26 @@ controller1.put('/show_personal/remove/:id' , (req ,res) => {
 
 
 // CREATE (post)
-controller1.post("/", (req, res) => {
+controller1.post("/index/", (req, res) => {
     UserRoutine.create(req.body, (error, createdWorkout) => {
         res.redirect("/index/show_personal");
     });
 });
 
 // EDIT (get) (put)
-controller1.get('/edit_personal' , (req,res) => { /* Test route to edit */
+controller1.get('/index/edit_personal' , (req,res) => { /* Test route to edit */
     UserRoutine.find({}, (error, allworkouts) => {
     res.render('edit_personal.ejs' , {workouts: allworkouts});
     });
 });
 
 // SHOW (get)
-controller1.get('/show_preset' , (req,res) => { 
+controller1.get('/index/show_preset' , (req,res) => { 
     res.render('show_preset.ejs' , {workouts: preset_routine});
 })
 
 
-controller1.get('/show_personal' , (req,res) => {
+controller1.get('/index/show_personal' , (req,res) => {
     UserRoutine.find({}, (error, allworkouts) => {
         res.render('show_personal.ejs', {workouts: allworkouts});
     });
