@@ -10,9 +10,9 @@
 
     <div id="indexOuterNav">
         <div id="indexInnerNav">
-            <a class="indexButtons" href="/index">Home</a>
-            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
-            <a class="indexButtons" href="/index/new">Create Exercise</a>
+            <a class="indexButtons" href="/">Home</a>
+            <a class="indexButtons" href="/show_preset">Preset Routine</a>
+            <a class="indexButtons" href="/new">Create Exercise</a>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
 
     <% workouts.forEach(workout=> { %>
         <div>
-            <form action="/index/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
+            <form action="/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
             <h3><input class="inputField1" type="string" name="name" value="<%= workout.name %>"/> (<input class="inputField2" type="number" name="sets" value="<%= workout.sets %>"/> Sets)</h3>
                 
                         <table>    
