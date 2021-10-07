@@ -8,19 +8,53 @@
 <body>
 
 <div id="bodyDiv">
+
+
+  <header>
     
     <div id="titleDiv">
         <h1>Body Movement</h1>
     </div>
 
+    <!-- <div id="indexOuterNav">
+      <div id="indexInnerNav">
+          <a class="indexButtons" href="/index/show_personal">Your Routine</a>
+          <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
+          <a class="indexButtons" href="/index/new">Create Routine</a>
+      </div>
+  </div> -->
 
-    <div id="indexOuterNav">
-        <div id="indexInnerNav">
-            <a class="indexButtons" href="/index/show_personal">Your Routine</a>
-            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
-            <a class="indexButtons" href="/index/new">Create Routine</a>
+
+  <div id="indexOuterNav">
+    <nav id="indexInnerNav" class="navbar navbar-light navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
+              </li>
+              <li class="nav-item">
+                <a class="indexButtons" href="/index/show_personal">Your Routine</a>
+              </li>
+              <li class="nav-item">
+                <a class="indexButtons" href="/index/new">Create Routine</a>
+              </li>
+
+            </ul>
+
+          </div>
         </div>
-    </div>
+      </div>
+    </nav>
+</div>
+  </header>
 
     <div>
         <h3>Feel Stronger. Live longer.</h3>

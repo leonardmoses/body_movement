@@ -51,11 +51,16 @@ controller1.delete('/show_personal/:id', (req, res) => {
 // UPDATE (put)
     //Manual Editing
 controller1.put('/show_personal/edit/:id', (req, res) => {  
-	UserRoutine.findByIdAndUpdate(req.params.id, {$sets:{val:req.body}}, {new: true}, 
+	UserRoutine.findByIdAndUpdate(req.params.id, req.body , {new: true}, 
         (error, updatedWorkout) => {
-        console.log(error)
+        console.log(updatedWorkout)
         res.redirect(`/index/show_personal`);
     });
+    // UserRoutine.findByIdAndUpdate(req.params.id, req.body)
+    // .then((updatedWorkout) => {
+    //     console.log(updatedWorkout)
+    //     res.redirect(`/index/show_personal`);
+    // })
 });
 
     //Adding a Set

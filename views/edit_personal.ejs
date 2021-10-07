@@ -7,9 +7,9 @@
 
     <% workouts.forEach(workout=> { %>
         <div>
-         
-            <h3><input type="string" name="lbs" value="<%= workout.name %>"/> (<input type="number" name="lbs" value="<%= workout.sets %>"/> Sets)</h3>
-                <form action="/index/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
+            <form action="/index/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
+            <h3><input type="string" name="name" value="<%= workout.name %>"/> (<input type="number" name="sets" value="<%= workout.sets %>"/> Sets)</h3>
+                
                         <table>    
                             <tr>
                                 <th>Weight</th>
@@ -22,14 +22,14 @@
 
                                 <tr>
                                     <td><input type="number" name="lbs" value="<%= workout.lbs %>"/></td>
-                                    <td><input type="number" name="lbs" value="<%= workout.reps %>"/></td>
-                                    <td><input type="number" name="lbs" value="<%= workout.rest %>"/></td>
-                                    <td><input type="number" name="lbs" value="<%= workout.rpe %>"/></td>
+                                    <td><input type="number" name="reps" value="<%= workout.reps %>"/></td>
+                                    <td><input type="number" name="rest" value="<%= workout.rest %>"/></td>
+                                    <td><input type="number" name="rpe" value="<%= workout.rpe %>"/></td>
 
                                 </tr>
                             
                         </table>
-                    <input type="submit" name="lbs" value="Submit Changes"/>
+                    <input type="submit" value="Submit Changes"/>
                 </form>
 
 
