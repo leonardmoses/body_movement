@@ -11,10 +11,10 @@
 
     <div id="indexOuterNav">
         <div id="indexInnerNav">
-            <a class="indexButtons" href="/index">Home</a>
-            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
-            <a class="indexButtons" href="/index/edit_personal">Edit Routine</a>
-            <a class="indexButtons" href="/index/new">Create Exercise</a>
+            <a class="indexButtons" href="/">Home</a>
+            <a class="indexButtons" href="/show_preset">Preset Routine</a>
+            <a class="indexButtons" href="/edit_personal">Edit Routine</a>
+            <a class="indexButtons" href="/new">Create Exercise</a>
         </div>
     </div>
     
@@ -26,11 +26,11 @@
                 <h3><%= workout.name %> (<%= workout.sets %> Sets)</h3>
                 <div class="addRemoveParentDiv">
                     <div class="addRemove">
-                        <form class="add" action="/index/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
+                        <form class="add" action="/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
                             <input type="submit" name="sets" value="Add Set"/>
                         </form>
 
-                        <form class="remove" action="/index/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
+                        <form class="remove" action="/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
                             <input type="submit" name="sets" value="Remove Set"/>
                         </form>
                     </div>
@@ -61,7 +61,7 @@
 
 
                 <div class="deleteDiv">
-                    <form class="delete" action="/index/show_personal/<%=workout._id%>?_method=DELETE" method="POST">
+                    <form class="delete" action="/show_personal/<%=workout._id%>?_method=DELETE" method="POST">
                         <input type="submit" value="DELETE"/>
                     </form>
                 </div>
