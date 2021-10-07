@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const PORT = process.env.PORT || 3000;
 // =======================================
 //              DATABASE
 // =======================================
@@ -16,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 // Database Connection Error/Success
 // Define callback functions for various events
-const db = mongoose.connection
+const db = mongoose.connection;
 db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
@@ -35,7 +36,7 @@ app.use(methodOverride("_method"));
 //              ROUTES
 // =======================================
 const controller1 = require("./controllers/controller1.js");
-app.use("" , controller1);
+app.use("/index" , controller1);
 
 // INDEX (get)
 
@@ -61,5 +62,4 @@ app.use("" , controller1);
 // =======================================
 //              LISTENER
 // =======================================
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`server is listening on port: ${PORT}`));
+app.listen(PORT, () => console.log('express is listening on:', PORT));
