@@ -30,7 +30,7 @@ const preset_routine = require('../models/preset-workout.js');
 //     res.render('index.ejs' , {preset_routine: preset_routine});
 // })
 
-controller1.get('/index' , (req,res) => { /* Test route to index */
+controller1.get('/' , (req,res) => { /* Test route to index */
     res.render('index.ejs');
 })
 
