@@ -1,4 +1,4 @@
-## Title: **Body body Movement**
+## Title: **Body Movement**
 
 **Description:**
   A app designed to allow the user to log a weight training workout or simply follow a default one.
