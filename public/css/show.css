@@ -1,37 +1,63 @@
 
 main {
     width: 100%;
-    /* background-color: green; */
+    background-image: linear-gradient(rgb(221, 221, 221), rgb(255, 255, 255)) ;
+}
+
+#tableMainDiv {
+    /* height: 1000px; */
+    width: 100%;
+    /* background-color: rgb(255, 52, 86); */
+}
+
+#aboveName {
+    padding-top: 30px;
 }
 
 .addRemoveParentDiv {
+    margin-top: 5px;
     width: 100%;
-    /* background-color: salmon; */
     border-radius: black solid 4px;
     display: flex;
 }
 
+
 .addRemove {
+    width: 541px;
     /* background-color: yellow; */
     display: flex;
+    flex-direction: row;
     margin: 0 auto;
 }
+
+.add  {
+    margin-right: auto;
+}
+
+.remove  {
+    margin-left: auto;
+}
+
 
 table {
     margin: 0 auto;
-    overflow-x:auto;
+    background-color: lightgrey;
+    filter: drop-shadow(3px 3px 3px darkgrey);
 }
 
 table , td , th{
-    border: black solid 1px;
-    background-color: lightgrey;
+    border: rgb(114, 107, 12) solid 1px;
     text-align: center;
-    contain: content;
+}
+
+th {
+    color: rgb(114, 107, 12);
 }
 
 td {
     width: 10%;
 }
+
 
 .deleteDiv {
     width: 100%;
@@ -39,7 +65,23 @@ td {
     display: flex;
 }
 
+
+
 .delete  {
     margin: 0 auto;
-    background-color: red;
+    width: 541px;
+    /* background-color: indianred; */
 }
+
+.inputField1 {
+    max-width: 200px;
+    background-color: white;
+    
+}
+
+.inputField2 {
+    width: 130px;
+    background-color: white;
+    
+}
+

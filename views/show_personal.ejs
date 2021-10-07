@@ -13,21 +13,24 @@
         <div id="indexInnerNav">
             <a class="indexButtons" href="/index">Home</a>
             <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
-            <a class="indexButtons" href="/index/edit_personal">Create Routine</a>
+            <a class="indexButtons" href="/index/edit_personal">Edit Routine</a>
+            <a class="indexButtons" href="/index/new">Create Exercise</a>
         </div>
     </div>
     
     <main>
         <% workouts.forEach(workout=> { %>
             <div id="tableMainDiv">
+
+                <div id="aboveName">
                 <h3><%= workout.name %> (<%= workout.sets %> Sets)</h3>
                 <div class="addRemoveParentDiv">
                     <div class="addRemove">
-                        <form action="/index/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
+                        <form class="add" action="/index/show_personal/add/<%=workout._id%>?_method=PUT" method="POST">
                             <input type="submit" name="sets" value="Add Set"/>
                         </form>
 
-                        <form action="/index/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
+                        <form class="remove" action="/index/show_personal/remove/<%=workout._id%>?_method=PUT" method="POST">
                             <input type="submit" name="sets" value="Remove Set"/>
                         </form>
                     </div>
@@ -62,6 +65,7 @@
                         <input type="submit" value="DELETE"/>
                     </form>
                 </div>
+            </div>
 
             </div>
         <% }) %>

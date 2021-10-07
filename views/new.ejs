@@ -1,19 +1,37 @@
 <%- include('./partials/head.ejs')%>
 
+<link rel="stylesheet" href="/css/new.css">
+
 <body>
 
-    <h1>New Page</h1>
+    <div id="titleDiv">
+        <h1>Add New Exercise</h1>
+    </div>
 
-    <form action="/index" method="POST">
-        name: <input type="text" name="name" value="New Exercise"/><br />
-        sets: <input type="number" min="1" name="sets" value="3"/><br />
-        lbs: <input type="number" min="0" name="lbs" value="30"/><br />
-        reps: <input type="number" min="1" name="reps" value="10"/><br />
-        rest: <input type="number" min="0" name="rest" value="60"/><br />
-        rpe: <input type="number" min="0" max="10" name="rpe" value="8"/><br />
-        <input type="submit" name="" value="Add Exercise" />
-    </form>
+    <div id="indexOuterNav">
+        <div id="indexInnerNav">
+            <a class="indexButtons" href="/index">Home</a>
+            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
+            <a class="indexButtons" href="/index/show_personal">Your Routine</a>
+            <a class="indexButtons" href="/index/edit_personal">Edit Routine</a>
+        </div>
+    </div>
 
+    <main>
+        <div id="aboveForm">
+            <div id="formDiv">
+                <form action="/index" method="POST">
+                    name: <input class="inputField" type="text" name="name" value="New Exercise"/><br />
+                    sets: <input class="inputField" type="number" min="1" name="sets" value="3"/><br />
+                    lbs: <input class="inputField" type="number" min="0" name="lbs" value="30"/><br />
+                    reps: <input class="inputField" type="number" min="1" name="reps" value="10"/><br />
+                    rest: <input class="inputField" type="number" min="0" name="rest" value="60"/><br />
+                    rpe: <input class="inputField" type="number" min="0" max="10" name="rpe" value="8"/><br />
+                    <input class="submitButton" type="submit" name="" value="Submit Exercise" />
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
 

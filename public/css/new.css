@@ -1,0 +1,31 @@
+main {
+    padding-top: 30px;
+    width: 100%;
+    background-image: linear-gradient(rgb(221, 221, 221), rgb(255, 255, 255)) ;
+}
+
+
+#formDiv {
+    width: 360px;
+    margin: 0 auto;
+    padding: 3px;
+    text-align: right;
+    background-color: rgb(139, 167, 91);
+    border: black solid 1px;
+    border-radius: 10px 0px 0px 15px;
+    filter: drop-shadow(4px 7px 5px darkgrey);
+    /* filter: opacity(.2); */
+    
+}
+
+.inputField {
+    width: 300px;
+    text-align: center;
+    background-color: white;
+}
+
+.submitButton {
+    width: 300px;
+    color: darkolivegreen;
+    background-color: rgba(208, 255, 0, 0.952);
+}

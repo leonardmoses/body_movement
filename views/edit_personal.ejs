@@ -1,14 +1,27 @@
 <%- include('./partials/head.ejs')%>
 
+<link rel="stylesheet" href="/css/show.css">
+
 <body>
 
-    <h1>Edit Your Routine</h1>
+    <div id="titleDiv">
+        <h1>Edit Workout</h1>
+    </div>
 
+    <div id="indexOuterNav">
+        <div id="indexInnerNav">
+            <a class="indexButtons" href="/index">Home</a>
+            <a class="indexButtons" href="/index/show_preset">Preset Routine</a>
+            <a class="indexButtons" href="/index/new">Create Exercise</a>
+        </div>
+    </div>
+
+    <main>
 
     <% workouts.forEach(workout=> { %>
         <div>
             <form action="/index/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
-            <h3><input type="string" name="name" value="<%= workout.name %>"/> (<input type="number" name="sets" value="<%= workout.sets %>"/> Sets)</h3>
+            <h3><input class="inputField1" type="string" name="name" value="<%= workout.name %>"/> (<input class="inputField2" type="number" name="sets" value="<%= workout.sets %>"/> Sets)</h3>
                 
                         <table>    
                             <tr>
@@ -21,15 +34,15 @@
                             
 
                                 <tr>
-                                    <td><input type="number" name="lbs" value="<%= workout.lbs %>"/></td>
-                                    <td><input type="number" name="reps" value="<%= workout.reps %>"/></td>
-                                    <td><input type="number" name="rest" value="<%= workout.rest %>"/></td>
-                                    <td><input type="number" name="rpe" value="<%= workout.rpe %>"/></td>
+                                    <td><input class="inputField2" type="number" name="lbs" value="<%= workout.lbs %>"/></td>
+                                    <td><input class="inputField2" type="number" name="reps" value="<%= workout.reps %>"/></td>
+                                    <td><input class="inputField2" type="number" name="rest" value="<%= workout.rest %>"/></td>
+                                    <td><input class="inputField2" type="number" name="rpe" value="<%= workout.rpe %>"/></td>
 
                                 </tr>
                             
                         </table>
-                    <input type="submit" value="Submit Changes"/>
+                    <input class="sumbitEdit" type="submit" value="Submit Changes"/>
                 </form>
 
 
@@ -38,7 +51,7 @@
     <% }) %>
 
     
-
+    </main>
 
 
 <% /* %>

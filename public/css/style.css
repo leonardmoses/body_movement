@@ -69,7 +69,7 @@ h1 {
 
 h3 {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     color:darkgoldenrod;
 }
 
@@ -86,19 +86,14 @@ p {
     background-color: grey;
 } */
 
-/* header {
-    display: flex;
-    flex-wrap: wrap;
+header {
     width: 100%;
-    background-color: hotpink;
-} */
+    display: block;
 
-#titleDiv {
-    width: 100%;
-    background-color: blue;
 }
 
-.navbar-brand {
+#titleDiv {
+    contain: content;
     width: 100%;
     height: 70px;
     background-image: linear-gradient(lightgrey, rgba(208, 255, 0, 0.952));
@@ -106,20 +101,25 @@ p {
 
 
 #indexOuterNav {
-    /* width: 100%; */
-    display: flex;
-    justify-content: flex-end;
+    width: 100%;
+    /* display: flex; */
     background-color: rgba(208, 255, 0, 0.952);
 }
 
 #indexInnerNav {
+    /* background-color: blue; */
     width: fit-content;
     margin: 0 auto;
+    
 }
+
+/* #container-fluid {
+    width: 0%;
+} */
 
 @keyframes pulse {
     0% {
-        background-color: darkgreen;
+        background-color: darkolivegreen;
         color: white;
     }
     50% {
@@ -127,14 +127,14 @@ p {
         color: darkgreen;
     }
     100% {
-        background-color: darkgreen;
+        background-color: darkolivegreen;
         color: white;
       }
   }
 
 .indexButtons {
     width: 170px;
-    background-color: rgb(4, 143, 8); /* Green */
+    background-color: rgb(4, 143, 8);
     border: white solid 2px;
     padding: 15px 32px;
     text-align: center;
@@ -151,20 +151,40 @@ p {
     /* transform: translateY(-10px); */
   }
 
-
   @media only screen and (max-width: 576px ) {
 
+    h1 {
+        font-size: 40px;
+    }
+
+    #indexOuterNav {
+        /* margin-top: 10%; */
+    }
+
     #indexInnerNav {
-        margin: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
     }
 
   }
 
+  @media only screen and (max-width: 375px ) {
+
+    h1 {
+        font-size: 35px;
+    }
 
 
-/*#region CSS bootrap Menu*/
+  @media only screen and (max-width: 320px ) {
 
 
 
 
-/*#endregion CSS Bootstrap Menu*/
+
+/*#region CSS bootrap*/
+
+
+
+
+/*#endregion CSS Bootstrap*/
