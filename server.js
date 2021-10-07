@@ -35,7 +35,7 @@ app.use(methodOverride("_method"));
 //              ROUTES
 // =======================================
 const controller1 = require("./controllers/controller1.js");
-app.use("/index" , controller1);
+app.use("" , controller1);
 
 // INDEX (get)
 
