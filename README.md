@@ -17,5 +17,7 @@
   4. Your personal routine has features to add or remove sets. You can also delete a particular exercise from your routine completely. In the navigation on *Your Routine* you can edit the existing values of each exercise. There is a lot of control to *Your Routine*.
   5. That is all! Enjoy!
 
+  
+
   **Future Enhancement:**
   Future enhancements will include user registration and authentication

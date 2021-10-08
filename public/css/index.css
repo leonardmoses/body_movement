@@ -1,9 +1,20 @@
 
-
+.subHeading {
+    padding: 15px 0 20px 0;
+}
 
 #carouselExampleControls {
-    max-height: 500px;
+    display: block;
+    max-height: 400px;
+    position:relative;
     contain: content;
+}
+
+img{
+    vertical-align:top;
+    /* position:fixed; */
+    top:0;
+
 }
 
 
@@ -11,4 +22,6 @@
      width: 100%;
      /* background-color: sandybrown; */
  }
+
+
 

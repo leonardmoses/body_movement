@@ -5,7 +5,7 @@
 <body>
 
     <div id="titleDiv">
-        <h1>Personalized Workout</h1>
+        <h1>Body Movement</h1>
     </div>
 
 
@@ -19,6 +19,11 @@
     </div>
     
     <main>
+
+        <div class="subHeading">
+            <h2>This is your personalized routine!</h2>
+        </div>
+
         <% workouts.forEach(workout=> { %>
             <div id="tableMainDiv">
 
@@ -35,6 +40,7 @@
                         </form>
                     </div>
                 </div>
+            
                 <table>    
                     <tr>
                         <th>Weight</th>
@@ -62,7 +68,7 @@
 
                 <div class="deleteDiv">
                     <form class="delete" action="/show_personal/<%=workout._id%>?_method=DELETE" method="POST">
-                        <input type="submit" value="DELETE"/>
+                        <input type="submit" value="Delete Exercise"/>
                     </form>
                 </div>
             </div>

@@ -1,11 +1,12 @@
 <%- include('./partials/head.ejs')%>
 
 <link rel="stylesheet" href="/css/show.css">
+<link rel="stylesheet" href="/css/edit.css">
 
 <body>
 
     <div id="titleDiv">
-        <h1>Edit Workout</h1>
+        <h1>Body Movement</h1>
     </div>
 
     <div id="indexOuterNav">
@@ -18,11 +19,27 @@
 
     <main>
 
+    <div class="subHeading">
+        <h2>Edit and make changes To each exercise</h2>
+    </div>
+    
+    <div id="OutsideAllTableDiv">
+
     <% workouts.forEach(workout=> { %>
-        <div>
+        <div id="tableMainDiv">
+
             <form action="/show_personal/edit/<%=workout._id%>?_method=PUT" method="POST">
-            <h3><input class="inputField1" type="string" name="name" value="<%= workout.name %>"/> (<input class="inputField2" type="number" name="sets" value="<%= workout.sets %>"/> Sets)</h3>
                 
+            <div id="editNameSets">
+                <div id="editName">
+                    <h4>Name: <input class="inputField1" type="string" name="name" value="<%= workout.name %>"/></h4>
+                 </div>   
+
+                <div id="editSets">
+                    <h4>Sets: <input class="inputField2" type="number" name="sets" value="<%= workout.sets %>"/></h4>
+                 </div>
+             </div> 
+
                         <table>    
                             <tr>
                                 <th>Weight</th>
@@ -33,53 +50,33 @@
 
                             
 
-                                <tr>
-                                    <td><input class="inputField2" type="number" name="lbs" value="<%= workout.lbs %>"/></td>
-                                    <td><input class="inputField2" type="number" name="reps" value="<%= workout.reps %>"/></td>
-                                    <td><input class="inputField2" type="number" name="rest" value="<%= workout.rest %>"/></td>
-                                    <td><input class="inputField2" type="number" name="rpe" value="<%= workout.rpe %>"/></td>
+                            <tr>
+                                <td><input class="inputField2" type="number" name="lbs" value="<%= workout.lbs %>"/></td>
+                                <td><input class="inputField2" type="number" name="reps" value="<%= workout.reps %>"/></td>
+                                <td><input class="inputField2" type="number" name="rest" value="<%= workout.rest %>"/></td>
+                                <td><input class="inputField2" type="number" name="rpe" value="<%= workout.rpe %>"/></td>
 
-                                </tr>
+                            </tr>
                             
                         </table>
+                    <div id="submitDiv">    
                     <input class="sumbitEdit" type="submit" value="Submit Changes"/>
+                    </div>
                 </form>
 
 
-
         </div>
-    <% }) %>
-
     
+    <% }) %>
+    </div>
     </main>
 
 
 <% /* %>
 <!--#region main  -->
 
-<form action="/store/<%=product.id%>/edit?_method=PUT" method="POST">
-    <!--  NOTE: the form is pre-populated with values for the server-->
-    name: <input type="text" name="name" placeholder="name"/><br />
-    description: <input type="text" name="description" placeholder="Product Description"/><br />
-    img: <input type="text" name="img" placeholder="Full URL here"><br>
-    price: <input type="number" name="price" placeholder="Amount in dollars"/><br />
-    qty: <input type="number" name="qty" placeholder="Items in stocks"/><br />
-    <input type="submit" name="submit" value="Submit Changes" />
-</form>
-
-    <form action="/index" method="POST">
-        name: <input type="text" name="name" value="New Exercise"/><br />
-        sets: <input type="number" min="1" name="sets" value="3"/><br />
-        lbs: <input type="number" min="0" name="lbs" value="30"/><br />
-        reps: <input type="number" min="1" name="reps" value="10"/><br />
-        rest: <input type="number" min="0" name="rest" value="60"/><br />
-        rpe: <input type="number" min="0" max="10" name="rpe" value="8"/><br />
-        <input type="submit" name="" value="Add Exercise" />
-    </form>
 
 <!--#endregion main  -->
 <% */ %>
-
-
 </body>
 </html>

@@ -1,0 +1,101 @@
+
+.subHeading {
+    padding: 15px 0 20px 0;
+}
+
+#OutsideAllTableDiv {
+    margin: 0 auto;
+    background-color: blue;
+    display: inline;
+    contain: content;
+    /* width: 70%; */
+}
+
+
+table {
+    margin: 0 auto;
+    background-color: lightgrey;
+    filter: unset;
+    border: rgb(114, 107, 12) solid 1px;
+    text-align: unset;
+    /* width: 100%; */
+}
+
+th {
+    border: rgb(114, 107, 12) solid 1px;
+    text-align: unset;
+}
+
+td {
+    border: rgb(114, 107, 12) solid 1px;
+    /* text-align: unset; */
+    width: unset;
+    scale: (1);
+}
+
+#editNameSets {
+    display: flex;
+    margin: 0 auto;
+    /* background-color: green; */
+}
+
+#editName{
+    margin-left: auto;
+}
+
+#editSets{
+    margin-right: auto;
+}
+
+.inputField1 , .inputField2 {
+    text-align: center;
+    /* width: 90px; */
+}
+
+.inputField1 {
+    width: 200px;
+}
+
+#submitDiv {
+    width: 100%;
+    /* background-color: brown; */
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+@media only screen and (max-width: 780px ) {
+    
+    .inputField1 {
+        width: 150px;
+    }
+
+    .inputField2 {
+        width: 90px;
+    }
+
+}
+
+@media only screen and (max-width: 375px ) {
+    
+    .inputField1 {
+        width: 120px;
+    }
+
+    .inputField2 {
+        width: 80px;
+    }
+    
+}
+
+@media only screen and (max-width: 320px ) {
+    
+    .inputField1 {
+        width: 100px;
+    }
+
+    .inputField2 {
+        width: 70px;
+    }
+
+}

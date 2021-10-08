@@ -66,11 +66,24 @@ h1 {
     /* filter: opacity(.2); */
 }
 
+h2 {
+    text-align: center;
+    font-size: 30px;
+    background-color: darkgoldenrod;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-clip: text;
+    /* background-size: 100%; */
+    /* background-repeat: repeat; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
 
 h3 {
     text-align: center;
     font-size: 25px;
-    color:darkgoldenrod;
+    color:rgb(95, 70, 7);
 }
 
 p {
@@ -151,15 +164,21 @@ header {
     /* transform: translateY(-10px); */
   }
 
+
+.subHeading {
+padding: 15px 0 0px 0;
+}
+
+
   @media only screen and (max-width: 576px ) {
 
     h1 {
         font-size: 40px;
     }
 
-    #indexOuterNav {
-        /* margin-top: 10%; */
-    }
+    /* #indexOuterNav {
+        margin-top: 10%;
+    } */
 
     #indexInnerNav {
         display: flex;
@@ -168,23 +187,15 @@ header {
     }
 
   }
+  
 
   @media only screen and (max-width: 375px ) {
 
     h1 {
         font-size: 35px;
     }
-
+  }
 
   @media only screen and (max-width: 320px ) {
-
-
-
-
-
-/*#region CSS bootrap*/
-
-
-
-
-/*#endregion CSS Bootstrap*/
+      
+  }

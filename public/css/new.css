@@ -4,17 +4,20 @@ main {
     background-image: linear-gradient(rgb(221, 221, 221), rgb(255, 255, 255)) ;
 }
 
+.subHeading {
+    padding: 15px 0 40px 0;
+}
 
 #formDiv {
     width: 360px;
     margin: 0 auto;
     padding: 3px;
     text-align: right;
-    background-color: rgb(139, 167, 91);
-    border: black solid 1px;
+    background-image: linear-gradient(180deg, #f3ed7877, rgb(139, 167, 91));
+    border: rgba(59, 104, 0, 0.685) solid 2px;
     border-radius: 10px 0px 0px 15px;
-    filter: drop-shadow(4px 7px 5px darkgrey);
-    /* filter: opacity(.2); */
+    /* filter: drop-shadow(4px 7px 5px darkgrey); */
+
     
 }
 
@@ -26,6 +29,7 @@ main {
 
 .submitButton {
     width: 300px;
-    color: darkolivegreen;
-    background-color: rgba(208, 255, 0, 0.952);
+    color: rgba(158, 59, 1, 0.801);
+    /* background-color: rgba(208, 255, 0, 0.952); */
+    background-image: linear-gradient(180deg, rgb(139, 167, 91), #f3ed78, rgb(139, 167, 91));
 }

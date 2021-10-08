@@ -5,7 +5,7 @@
 <body>
 
     <div id="titleDiv">
-        <h1>Preset Workout</h1>
+        <h1>Body Movement</h1>
     </div>
 
     <div id="indexOuterNav">
@@ -17,6 +17,11 @@
     </div>
 
     <main>
+
+        <div class="subHeading">
+            <h2>Try this Beginner Routine.</h2>
+        </div>
+
         <% workouts.forEach(workout=> { %>
             <div id="tableMainDiv">
                 <div id="aboveName"></div>
@@ -72,42 +77,7 @@
     <!--#region main  -->
     
 
-
-
-    <div id="tableDiv">
-        <table>
-            
-                <% for(let i = 0; i < workouts.length; i++) { %>
-                    
-                        <th><h3><%= workouts[i].name %> (<%= workouts[i].sets %> Sets)</h3></th>
-
-                            <tr>
-                                <th>Weight</th>
-                                <th>reps</th>
-                                <th>rest</th>
-                                <th>rpe</th>
-                            </tr>
-
-                            <% for(let k = 0; k < workouts[i].sets; k++) { %>
-                                
-                                    <tr>
-                                        <td><%= workouts[i].lbs %> lbs</td>
-                                        <td><%= workouts[i].reps %>x</td>
-                                        <td><%= workouts[i].rest %>sec</td>
-                                        <td><%= workouts[i].rpe %></td>
-                                        <td><input type="button" value="delete set"></td>
-                                    </tr>
-                    
-                            <% } %>
-
-                        <tr><td id="addSetCell"><input type="button" value="Add Set"></td></tr>
-                    
-                <% } %>
-                                
-        </table>
-    </div>  
     <!--#endregion -->
     <% */ %>
-
 </body>
 </html>
